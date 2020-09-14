@@ -23,12 +23,13 @@ namespace API
                 var services = scope.ServiceProvider;
                 try
                 {
-var context = services.GetRequiredService<DataContext>();
-context.Database.Migrate();
+                    var context = services.GetRequiredService<DataContext>();
+                    context.Database.Migrate();
+                    Seed.SeedData(context);
                 }
                 catch (Exception ex)
                 {
-                    var logger = services.GetRequiredService<ILogger<Program>> ();
+                    var logger = services.GetRequiredService<ILogger<Program>>();
                     logger.LogError(ex, "An error occured during migration Program.cs line 32");
                 }
             }
