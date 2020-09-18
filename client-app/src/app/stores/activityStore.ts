@@ -12,7 +12,6 @@ import {
   HubConnectionBuilder,
   LogLevel,
 } from "@microsoft/signalr";
-import { resolve } from "dns";
 
 export default class ActivityStore {
   rootStore: RootStore;
@@ -39,6 +38,7 @@ export default class ActivityStore {
     this.hubConnection
       .start()
       //.then(() => console.log(this.hubConnection!.state))
+      .then(() => new Promise(resolve => setTimeout(resolve, 150)))
       .then(() => {
         console.log('Attempting to join group');
         this.hubConnection!.invoke('AddToGroup', activityId)
