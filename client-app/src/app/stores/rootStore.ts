@@ -6,7 +6,7 @@ import ModalStore from './modalStore';
 import ProfileStore from './profileStore';
 import UserStore from "./userStore";
 
-configure({enforceActions: 'observed'});
+configure({enforceActions: 'strict'});
 
 export class RootStore {
     activityStore: ActivityStore;
