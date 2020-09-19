@@ -1,4 +1,5 @@
 import { FORM_ERROR } from 'final-form';
+import { observer } from 'mobx-react-lite';
 import React, { useContext } from 'react'
 import {Form as FinalForm, Field} from 'react-final-form';
 import { combineValidators, isRequired } from 'revalidate';
@@ -40,4 +41,4 @@ const LoginForm = () => {
     )
 }
 
-export default LoginForm
+export default observer(LoginForm)

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { RootStoreContext } from '../../app/stores/rootStore';
 import LoginForm from '../user/LoginForm';
 import RegisterForm from '../user/RegisterForm';
+import { observer } from 'mobx-react-lite';
 
 const HomePage = () => {
   const token = window.localStorage.getItem('jwt');
@@ -46,4 +47,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default observer(HomePage);

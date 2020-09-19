@@ -1,3 +1,4 @@
+import { observer } from 'mobx-react-lite'
 import React from 'react'
 import { Tab } from 'semantic-ui-react'
 import ProfileActivities from './ProfileActivities'
@@ -24,4 +25,4 @@ const ProfileContent:React.FC<{setActiveTab: (activeIndex: any) => void}> = ({se
     )
 }
 
-export default ProfileContent
+export default observer(ProfileContent)
